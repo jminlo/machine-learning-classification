@@ -35,14 +35,34 @@ Results reflect the supplied datasets and experimental setup in the notebook; th
 
 ## Running locally
 
-```bash
-python -m venv .venv
-source .venv/bin/activate
-pip install -r requirements.txt
-jupyter notebook notebooks/classification_analysis.ipynb
+Clone the repository and open a terminal in its root directory.
+
+### Windows PowerShell
+
+```powershell
+py -m venv .venv
+.\.venv\Scripts\Activate.ps1
+py -m pip install -r requirements.txt
+py -m jupyter notebook notebooks\classification_analysis.ipynb
 ```
 
-On Windows, activate the environment with `.venv\Scripts\activate`.
+If PowerShell blocks the activation script, permit it for only the current terminal session and activate again:
+
+```powershell
+Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass
+.\.venv\Scripts\Activate.ps1
+```
+
+### macOS or Linux
+
+```bash
+python3 -m venv .venv
+source .venv/bin/activate
+python -m pip install -r requirements.txt
+python -m jupyter notebook notebooks/classification_analysis.ipynb
+```
+
+When the environment is active, the terminal prompt normally begins with `(.venv)`.
 
 ## Technologies
 
